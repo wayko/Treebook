@@ -10,8 +10,9 @@ Treebook2::Application.routes.draw do
  
 
   resources :statuses
-  root to:  'statuses#index'
   get 'feed', to: 'statuses#index', as: :feed
+  root to:  'statuses#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,36 +1,18 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-    test "a user should enter a first name" do 
-    	user = User.new
-    	assert !user.save
-    	assert !user.errors[:first_name].empty?
-    	
-    end
-    test "a user should enter a last name" do 
-    	user = User.new
-    	assert !user.save
-    	assert !user.errors[:last_name].empty?
-    	
-    end
-    test "a user should enter a profile name" do 
-    	user = User.new
-    	assert !user.save
-    	assert !user.errors[:profile_name].empty?
-    	
-    end
-    test "a user should a unique profile name" do 
-    	user = User.new
-    	user.profile_name = users(:jason).profile_name
-  		assert !user.save
-  		
-    	assert !user.errors[:profile_name].empty?
-    end
+
 
      test "a user should a profile name without spaces" do 
     	user = User.new
-    	user.profile_name = "My Profile Name"
+    	user.profile_name = users(:jasontest).profile_name
+        user.first_name = users(:jasontest).first_name
+        user.last_name = users(:jasontest).last_name
+        user.email = users(:jasontest).email
+        user.password = "testpw123"
+        user.password_confirmation = "testpw123"
   		assert !user.save
+        puts  user.errors.inspect
     	assert !user.errors[:profile_name].empty?
     	assert user.errors[:profile_name].include?("Must be formatted correctly")
     end
