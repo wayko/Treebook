@@ -1,5 +1,11 @@
 jason:
-    first_name: "jose"
+    first_name: "jason"
     last_name: "ortiz"
     email: "test1@test.com"
     profile_name: "testaccounts1"
+
+jose:
+    first_name: "jose"
+    last_name: "ortiz"
+    email: "ranma@japan.com"
+    profile_name: "Wayko2"
