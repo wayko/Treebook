@@ -2,6 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
 
+     should have_many(:user_friendships)
 
     test "a user should enter a first name" do 
        user = User.new
@@ -32,10 +33,11 @@ class UserTest < ActiveSupport::TestCase
        assert !user.errors[:profile_name].empty?
     end
 
-     test "a user should a profile name without spaces" do 
+    test "a user should a profile name without spaces" do 
        user = User.new
-       user.profile_name = "My Profile Name"
+       user.profile_name = users(:jason).profile_name
        assert !user.save
+       
        assert !user.errors[:profile_name].empty?
        assert user.errors[:profile_name].include?("Must be formatted correctly")
    end
