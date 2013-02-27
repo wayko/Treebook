@@ -9,13 +9,13 @@ gem 'rails', '3.2.11'
 gem 'devise'
 gem 'simple_form'
 
-group :development, :test do
-	gem 'sqlite3'
-end
+
 group :test do
 	gem 'shoulda'
 end
-
+group :development, :test do
+	gem 'sqlite3'
+end
 group :production do
 	gem "pg"
 end
