@@ -73,7 +73,7 @@ GEM
     rack-ssl (>= 1.4.0)
       rack
     rack-test (0.6.2)
-      rack (>= 1.0)
+      rack (>= 1.5.4)
     rails (>= 3.2.17)
       actionmailer (= 3.2.11)
       actionpack (= 3.2.11)
